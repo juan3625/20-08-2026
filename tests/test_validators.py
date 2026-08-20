@@ -97,6 +97,7 @@ def test_validate_reservation_date_rejects_weekend_dates(weekend_date):
 )
 
 
+#Tets para validar que los horarios de reserva son correctos y que se rechazan los horarios fuera del horario permitido
 def test_validate_reservation_time(reservation_time, duration):
     assert validate_reservation_time(reservation_time, duration) == reservation_time
 
