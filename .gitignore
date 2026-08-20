@@ -1,0 +1,15 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Caché de Pytest
+.pytest_cache/
+
+# Archivos de configuración de VS Code e IDEs
+.vscode/
+.DS_Store
