@@ -26,3 +26,16 @@ Validar y comprobar de forma aislada las reglas de negocio de la lógica del dom
    ```bash
    git clone <URL_DE_TU_REPOSITORIO>
    cd pruebas-de-software-fast-api
+
+   python -m pytest -v
+
+python -m venv .venv
+.\.venv\Scripts\activate
+
+si ocurre error 
+source .venv/Scripts/activate
+
+ejemplo              |
+                     |
+                     ese c edita
+python -m pytest -k reservation -v

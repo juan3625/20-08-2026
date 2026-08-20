@@ -26,3 +26,5 @@ class InvalidReservationTimeError(ReservationError):
 class DuplicateReservationError(ReservationError):
     """Exception raised for duplicate reservations."""
     pass
+
+InvalidCustomerNameError = InvalidCustomerError

@@ -34,8 +34,8 @@ def validate_duration(duration: int) -> int:
     return duration
 
 
-def validate_reservation_date(reservation_date: date) -> date:
-    today = date.today()
+def validate_reservation_date(reservation_date: date, current_date: date | None = None) -> date:
+    today = current_date if current_date is not None else date.today()
     if reservation_date < today:
         raise InvalidReservationDateError("Reservation date cannot be in the past.")
     if reservation_date.weekday() >= 5:
