@@ -43,3 +43,19 @@ def validate_reservation_date(reservation_date: date) -> date:
     return reservation_date
 
 
+def validate_reservation_time(reservation_time: time, duration: int = 30) -> time:
+    if reservation_time < OPENING_TIME:
+        raise InvalidReservationTimeError("La reserva no puede ser antes de la hora de apertura.")
+
+    dummy_date = datetime(2000, 1, 1)
+    start_dt = datetime.combine(dummy_date, reservation_time)
+    end_dt = start_dt + timedelta(minutes=duration)
+    closing_dt = datetime.combine(dummy_date, CLOSING_TIME)
+
+    if end_dt > closing_dt:
+        raise InvalidReservationTimeError("La reserva finaliza después del horario de cierre.")
+
+    if reservation_time >= CLOSING_TIME:
+        raise InvalidReservationTimeError("La reserva no puede iniciar en o después del horario de cierre.")
+
+    return reservation_time
